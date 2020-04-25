@@ -1,0 +1,999 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Fuentes */
+
+
+
+/* Scroll Bar */
+
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-button:increment,
+body::-webkit-scrollbar-button {
+    display: none;
+}
+
+body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #043264;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+input {
+    border-radius: 10px;
+    font-family: "Raleway";
+    font-weight: 300;
+}
+
+textarea {
+    border-radius: 10px;
+    font-family: "Raleway";
+    font-weight: 300;
+}
+
+
+/* Header */
+
+header {
+    width: 100%;
+    background-image: url(../img/Fondo1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+header .textos {
+    margin-top: 100px;
+    text-align: center;
+}
+
+header .titulo {
+    margin: 5vw;
+    font-weight: 900;
+    font-size: 80px;
+}
+
+header .esc {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+header .esc:hover {
+    color: #043264;
+    transition: width 2s linear 1s;
+}
+
+header .sec {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+header .sec:hover {
+    color: #d3303e;
+    transition: width 2s linear 1s;
+}
+
+header .tec {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+header .tec:hover {
+    color: #043264;
+    transition: width 2s linear 1s;
+}
+
+header .num {
+    text-decoration: none;
+    color: #fff;
+    transition: width 2s linear 1s;
+}
+
+header .num:hover {
+    color: #d3303e;
+    transition: width 2s linear 1s;
+}
+
+header .subtitulo {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 32px 0 0px 0;
+}
+
+header .boton {
+    display: inline-block;
+    padding: 6px 6px 8px 6px;
+    width: 140px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.boton {
+    display: inline-block;
+    margin: 5vw 0;
+    padding: 6px 10px;
+    padding-bottom: 8px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.boton-texto {
+    margin-top: 3px;
+}
+
+.boton-texto-inscripciones {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.boton-black {
+    display: inline-block;
+    margin: 5vw 0;
+    padding: 6px;
+    padding-bottom: 8px;
+    width: 100px;
+    border: 1px solid rgb(15, 15, 15);
+    color: rgb(15, 15, 15);
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.boton-texto-black {
+    margin-top: 3px;
+}
+
+/* Nav */
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top: 5vw;
+    left: 5vw;
+
+    z-index: 10;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #f5f5f5;
+
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: #D3303E;
+}
+
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #D3303E;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #f5f5f5;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+    position: absolute;
+    width: auto;
+    margin: -100px 0 0 -10vw;
+    padding: 5vw;
+    padding-top: 100px;
+    padding-left: 10vw;
+
+    background: #021933d5;
+    border-radius: 10px;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 17px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+/* Main */
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 10vw 0;
+}
+
+.contenedor-slim {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 0;
+    text-align: center;
+}
+
+.sobre-nosotros {
+    text-align: center;
+    font-size: 55px;
+    color: #D3303E;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.slogan {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #043264;
+}
+
+.parrafo {
+    margin-bottom: 12px;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 24px;
+    color: rgb(19, 19, 19);
+}
+
+.acerca-de .boton {
+    display: inline-block;
+    padding: 6px;
+    width: 125px;
+    font-weight: 300;
+    border: 1px solid rgba(24, 16, 16, .7);
+    color: rgb(24, 16, 16);
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.galeria {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.imagenes {
+    width: 20%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagenes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.encima {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #D3303E;
+}
+
+.encima h2 {
+    position: relative;
+    top: 45%;
+    text-align: center;
+    color: #fff;
+}
+
+.encima div {
+    position: relative;
+    display: block;
+    top: 46%;
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    margin: auto;
+    border-radius: 10px;
+}
+
+
+.cards {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 20px 0;
+    width: 30%;
+    height: 270px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 4px 0 rgba(2, 2, 2, 0.849);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.507);
+}
+
+.cards img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.fondo {
+    position: relative;
+    background-image: url(../img/fondo.png);
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.titulo-egresados,
+.subtitulo-egresados {
+    color: #fff;
+    text-align: center;
+}
+
+.titulo-egresados {
+    font-size: 55px;
+}
+
+.subtitulo-egresados {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 65px;
+}
+
+.egresados {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.egresado {
+    width: 30%;
+}
+
+.egresado img {
+    width: 100%;
+    border-radius: 27px;
+}
+
+.egresado-turno {
+    width: 47.5%;
+}
+
+.egresado-turno img {
+    width: 100%;
+    border-radius: 27px;
+}
+
+.contactos {
+    background: #043264;
+}
+
+.titulo-contactos,
+.subtitulo-contactos {
+    color: #fff;
+    text-align: center;
+}
+
+.titulo-contactos {
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.subtitulo-contactos {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 65px;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+input[type="email"],
+input[type="text"] {
+    font-family: 'Raleway';
+    font-weight: 300;
+    display: inline-block;
+    width: 48%;
+    padding: 13px;
+    border: none;
+    color: #fff;
+    background: rgba(37, 37, 33, .7);
+    margin-bottom: 15px;
+    border-top: solid rgba(37, 37, 33, .7);
+    border-radius: 10px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-top: 5px solid rgba(255, 255, 255, 0.7);
+}
+
+textarea {
+    font-family: 'Raleway';
+    font-weight: 300;
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    max-height: 200px;
+    min-height: 200px;
+    background: rgba(37, 37, 33, .7);
+    padding: 13px;
+    border: none;
+    color: #fff;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+input[type="submit"] {
+    font-family: 'Raleway';
+    font-weight: 300;
+    display: inline-block;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    background: rgba(37, 37, 33, .7);
+    width: 100px;
+    border-radius: 10px;
+}
+
+/* Footer */
+
+.footer-distributed {
+    background-color: #D3303E;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    margin-top: 0px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-left {
+    width: 40%;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 20px;
+    margin: 0;
+}
+
+.footer-distributed h3 span {
+    color: #043264;
+}
+
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #f4f4f4;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: #043264;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: #043264;
+    text-decoration: none;
+    ;
+}
+
+.footer-distributed .footer-right {
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #f4f4f4;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.icon-foo {
+    height: 35px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.icons-foo {
+    margin-bottom: 10px;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width:900px) {
+    .card {
+        width: 48%;
+    }
+
+    .footer-distributed {
+        font: bold 14px;
+
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+
+    .main {
+        line-height: normal;
+        font-size: auto;
+    }
+
+
+}
+
+@media screen and (max-width:640px) {
+    header .textos {
+        margin-top: 130px;
+    }
+
+    header .titulo {
+        font-size: 25px;
+    }
+
+    .none {
+        display: none
+    }
+
+    .imagenes {
+        flex-grow: 1;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .card-profesores {
+        width: 90%;
+    }
+
+    .fondo {
+        height: auto;
+    }
+
+    .especial {
+        display: none;
+    }
+
+    .egresado {
+        width: 90%;
+        margin-bottom: 50px;
+    }
+
+    .egresado-turno {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:380px) {
+    header .textos {
+        margin-top: 100px;
+    }
+
+    header .titulo {
+        font-size: 30px;
+    }
+
+    header .subtitulo {
+        font-size: 25px;
+        margin-bottom: 32px;
+    }
+
+    .titulo-egresados-historia {
+        font-size: 10px;
+    }
+
+    .sobre-nosotros {
+        font-size: 46px;
+    }
+
+    .slogan {
+        font-size: 20px;
+    }
+
+    .titulo-egresados {
+        font-size: 36px;
+    }
+
+    .subtitulo-egresados {
+        font-size: 16px;
+    }
+
+    .titulo-red {
+        font-size: 20px;
+    }
+
+    .subtitulo-red {
+        font-size: 12px;
+    }
+
+    .titulo-blue {
+        font-size: 20px;
+    }
+
+    .subtitulo-blue {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:640px) {
+    header .textos {
+        margin-top: 30px;
+    }
+
+    header .titulo {
+        font-size: 45px;
+    }
+
+
+    header .subtitulo {
+        font-size: 20px;
+        margin-bottom: 32px;
+    }
+
+    .sobre-nosotros {
+        font-size: 40px;
+    }
+
+    .slogan {
+        font-size: 20px;
+    }
+
+    .titulo-egresados {
+        font-size: 40px;
+    }
+
+    .subtitulo-egresados {
+        font-size: 20px;
+    }
+
+    h2 .titulo-red,
+    h2 .titulo-blue {
+        font-size: 2vw;
+    }
+
+    .subtitulo-red,
+    .subtitulo-blue {
+        font-size: 2.5vw;
+    }
+
+    .titulo-contactos {
+        font-size: 40px;
+    }
+}
+
+
+/* Archivos Secundarios (variaciones de Index) */
+
+.red {
+    background: #D3303E;
+}
+
+.blue {
+    background: #043264;
+}
+
+.titulo-red,
+.titulo-blue {
+    text-align: center;
+    font-size: 40px;
+}
+
+.subtitulo-red,
+.subtitulo-blue {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.titulo-red,
+.subtitulo-red {
+    color: #043264;
+}
+
+.titulo-blue,
+.subtitulo-blue {
+    color: #D3303E;
+}
+
+.subtitulo-red,
+.subtitulo-blue {
+    margin-bottom: 20px;
+}
+
+.parrafo-white {
+    margin-bottom: 12px;
+    font-weight: 200;
+    text-align: justify;
+    line-height: 24px;
+    color: rgb(221, 221, 221);
+}
+
+.himno {
+    width: 100%;
+    padding: 0 10%;
+    text-align: center;
+    align-self: center;
+    padding-bottom: 40px;
+}
+
+.himno-texto {
+    color: #fff;
+    font-size: 15px;
+}
+
+.horario {
+    width: 100%;
+}
+
+.comunicado {
+    margin-left: 5vw;
+    color: rgb(26, 26, 26);
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 17, 0.53);
+}
+
+.a-contactos {
+    text-decoration: none;
+    color: rgb(26, 26, 26);
+}
+
+/* Grados */
+
+
+.grados {
+    margin-top: 20px;
+    color: #043264;
+}
+
+a {
+    text-decoration: none;
+}
