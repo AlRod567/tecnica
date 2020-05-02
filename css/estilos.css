@@ -10,10 +10,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Fuentes */
-
-
-
 /* Scroll Bar */
 
 body::-webkit-scrollbar {
@@ -156,9 +152,11 @@ header .boton {
     border-radius: 10px;
 }
 
+
 .boton-texto {
     margin-top: 3px;
 }
+
 
 .boton-texto-inscripciones {
     font-size: 15px;
@@ -590,6 +588,7 @@ input[type="submit"] {
     width: 100%;
     text-align: left;
     margin-top: 0px;
+
 }
 
 .footer-distributed .footer-left,
@@ -996,4 +995,12 @@ iframe {
 
 a {
     text-decoration: none;
+}
+
+/* Index Variacion */
+
+.canal-titulo {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #043264;
 }
